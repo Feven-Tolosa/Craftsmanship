@@ -1,0 +1,88 @@
+/* ==========================================
+   Portfolio Design System
+   Inspired by warm sunlight & soft paintings
+========================================== */
+
+:root {
+  /* ========= COLORS ========= */
+
+  /* Backgrounds */
+  --bg-primary: #f8f4eb;
+  --bg-secondary: #f3ede2;
+  --bg-card: rgba(255, 252, 247, 0.82);
+
+  /* Text */
+  --text-primary: #5f4b41;
+  --text-secondary: #7e6b60;
+  --text-light: #a08d80;
+
+  /* Accent */
+  --accent: #cba68b;
+  --accent-dark: #b58d6f;
+  --accent-light: #e9d7c7;
+
+  /* Borders */
+  --border: #e6ddd2;
+
+  /* Glow */
+  --glow: #fff6dc;
+
+  /* White */
+  --white: #ffffff;
+
+  /* Shadow */
+  --shadow-soft: 0 12px 35px rgba(94, 75, 65, 0.08);
+  --shadow-hover: 0 18px 45px rgba(94, 75, 65, 0.12);
+
+  /* Blur */
+  --blur: blur(18px);
+
+  /* ========= TYPOGRAPHY ========= */
+
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-hero: clamp(3rem, 8vw, 6rem);
+
+  --fs-h1: clamp(2.5rem, 5vw, 4rem);
+
+  --fs-h2: clamp(2rem, 4vw, 3rem);
+
+  --fs-h3: 1.6rem;
+
+  --fs-body: 1rem;
+
+  --fs-small: 0.95rem;
+
+  --line-height: 1.8;
+
+  /* ========= SPACING ========= */
+
+  --section-padding: 120px;
+
+  --container-width: 1180px;
+
+  --radius-sm: 12px;
+
+  --radius-md: 22px;
+
+  --radius-lg: 34px;
+
+  --radius-xl: 50px;
+
+  /* ========= TRANSITIONS ========= */
+
+  --transition: 0.35s ease;
+
+  --transition-slow: 0.8s ease;
+
+  /* ========= NAV ========= */
+
+  --nav-height: 80px;
+
+  /* ========= Z INDEX ========= */
+
+  --z-nav: 1000;
+
+  --z-cursor: 9999;
+}
