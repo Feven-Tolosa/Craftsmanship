@@ -1,0 +1,414 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow-x: hidden;
+  line-height: var(--line-height);
+  position: relative;
+}
+
+/* ==========================================
+   BACKGROUND IMAGE
+========================================== */
+
+body::before {
+  content: '';
+
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(248, 244, 235, 0.78), rgba(248, 244, 235, 0.9)),
+    url('../assets/images/background.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -3;
+
+  animation: backgroundMove 80s ease-in-out infinite alternate;
+}
+
+.background-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 246, 220, 0.7),
+    transparent 60%
+  );
+
+  z-index: -2;
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+  width: min(90%, var(--container-width));
+
+  margin: auto;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+  position: fixed;
+
+  width: 100%;
+
+  top: 25px;
+
+  left: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  z-index: var(--z-nav);
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+  width: min(92%, 1100px);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 18px 32px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  box-shadow: var(--shadow-soft);
+
+  transition: var(--transition);
+}
+
+.logo {
+  font-family: var(--font-heading);
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+
+  display: flex;
+
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: var(--text-primary);
+
+  font-weight: 500;
+
+  transition: var(--transition);
+
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--accent);
+
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent-dark);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding-inline: 20px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-subtitle {
+  color: var(--accent-dark);
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+
+  font-size: var(--fs-hero);
+
+  line-height: 1.05;
+
+  margin-bottom: 28px;
+
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: var(--text-secondary);
+
+  font-size: 1.15rem;
+
+  margin-bottom: 45px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 34px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  transition: var(--transition);
+
+  font-weight: 600;
+}
+
+.primary-btn {
+  background: var(--accent);
+
+  color: white;
+
+  box-shadow: var(--shadow-soft);
+}
+
+.primary-btn:hover {
+  background: var(--accent-dark);
+
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.55);
+
+  color: var(--text-primary);
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  backdrop-filter: blur(15px);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-4px);
+
+  background: white;
+}
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+
+  font-size: var(--fs-h2);
+
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.section p {
+  max-width: 760px;
+
+  margin: auto;
+
+  color: var(--text-secondary);
+
+  text-align: center;
+}
+
+/* ==========================================
+   PROJECT GRID
+========================================== */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 35px;
+
+  margin-top: 70px;
+}
+
+/* ==========================================
+   SKILLS
+========================================== */
+
+.skills-grid {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-top: 50px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: var(--text-light);
+
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   CUSTOM CURSOR
+========================================== */
+
+.cursor {
+  position: fixed;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: rgba(203, 166, 139, 0.35);
+
+  backdrop-filter: blur(8px);
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%);
+
+  z-index: var(--z-cursor);
+}
+
+/* ==========================================
+   FLOATING CARDS
+========================================== */
+
+.glass {
+  background: var(--bg-card);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+img {
+  max-width: 100%;
+
+  display: block;
+}
